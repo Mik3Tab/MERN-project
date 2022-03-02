@@ -28,6 +28,7 @@ const Header = () =>{
             }
         </div>
         </nav>
+        
     );
 }
 

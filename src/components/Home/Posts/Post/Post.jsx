@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getAll, reset } from "../../../../features/Post";
+import { getAll, reset } from "../../../../features/posts/postsSlice";
 import { Spin } from "antd";
 import { Link } from "react-router-dom";
 const Post = () => {
   const { posts, isLoading } = useSelector((state) => state.posts);
   const dispatch = useDispatch();
-
   useEffect(async () => {
     await dispatch(getAll());
     await dispatch(reset());
