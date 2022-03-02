@@ -1,4 +1,3 @@
-import "./App.css";
 import React from "react";
 import Header from "./components/Header/Header";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
@@ -7,7 +6,6 @@ import Register from "./components/Register/Register";
 import Home from "./components/Home/Home";
 import Profile from "./components/Profile/Profile";
 import PostDetail from "./components/Home/Posts/PostDetail/PostDetail";
-import './App.scss';
 
 function App() {
   return (

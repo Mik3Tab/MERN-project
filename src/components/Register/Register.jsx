@@ -4,6 +4,7 @@ import {register,reset} from '../../features/auth/authSlice'
 import { notification } from "antd";
 import { useNavigate } from "react-router-dom";
 import "antd/dist/antd.css";
+import "./Register.scss";
 const Register = () => {
     const [formData, setFormData] = useState({ name: "",email: "",password: "",password2: "", });
     const { name, email, password, password2 } = formData;
@@ -40,6 +41,8 @@ const Register = () => {
       };
     
     return(
+      <div>
+        <h1>Login</h1>
         <form onSubmit={onSubmit}>
             <input type="text" name="name" placeholder="name" value={name} onChange={onChange}/>
             <input type="email" name="email" placeholder="email" value={email} onChange={onChange}/>
@@ -47,6 +50,7 @@ const Register = () => {
             <input type="password" name="password2" placeholder="repeat password" value={password2} onChange={onChange}/>            
             <button type="submit" >Register</button>
         </form>
+      </div>
     )
 }
 
