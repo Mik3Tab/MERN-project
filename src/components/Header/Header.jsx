@@ -14,7 +14,6 @@ const Header = () =>{
     };
     return(
         <nav>
-            <span>Header</span>
         <div className='header'>
         {
         user ? <>
