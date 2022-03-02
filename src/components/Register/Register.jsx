@@ -36,6 +36,9 @@ const Register = () => {
           return notification.error({message: "Error", description: "Passwords do not match",});
         } else {
             dispatch(register(formData));
+            setTimeout(() => {
+              navigate("/login");
+            }, 1000);
             return notification.success({message:"Bienvenido",description:"Te has registrado correctamente"});
         }
       };
