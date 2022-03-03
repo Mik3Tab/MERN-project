@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom";
 import { login, reset } from "../../features/auth/authSlice";
 import { notification } from "antd";
 import "antd/dist/antd.css";
+import './Login.scss';
+
 const Login = () => {
   const [formData, setFormData] = useState({ email: "", password: ""});
   const { email, password } = formData;
@@ -32,12 +34,16 @@ const Login = () => {
       navigate("/profile");
     }, 1000);
   };
+
     return(
+    <div className="mainLogin">
+      <h1>Login</h1>
         <form onSubmit={onSubmit}>
             <input type="email" name="email" placeholder="email" value={email} onChange={onChange}/>
             <input type="password" name="password" placeholder="password" value={password} onChange={onChange}/>
             <button type="submit">Login</button>
         </form>
+    </div>
     )
 }
 

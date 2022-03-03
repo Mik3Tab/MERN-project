@@ -17,12 +17,12 @@ const login = async(userData) =>{
 
 const logout = async(userData)=>{
     const user = JSON.parse(localStorage.getItem("user"));
-    const res = axios.delete(API_URL + "users/logout", {
+    const res = axios.put(API_URL + "/users/logout",{}, {
         headers:{
             authorization: user?.token,
         },
     });
-    if(res.data){
+    if(res){
         localStorage.removeItem("user");    
     }
     return res.data;
