@@ -3,9 +3,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { getAll, reset } from "../../../../features/posts/postsSlice";
 import { Spin } from "antd";
 import { Link } from "react-router-dom";
+import './Post.scss'
 const Post = () => {
   const { posts, isLoading } = useSelector((state) => state.posts);
-  const { dispatch } = useDispatch();
+  const dispatch  = useDispatch();
   useEffect(async()=>{
     await dispatch(getAll());
     await dispatch(reset());
@@ -21,14 +22,15 @@ const Post = () => {
 
   const post = posts.map((post) => {
     return (
-      <div className="post" key={post.id}>
-        <Link to={"/post/" + post.id}>
-          <p>{post.title}</p>
+      <div className="post" key={post._id}>
+        <Link to={"/post/" + post._id}>
+          <h1>{post.title}</h1>
+          <h3>{post.createdAt}</h3>
         </Link>
-      </div>
+        </div>
     );
   });
-  return <div>{post}</div>;
+  return <div className="container">{post}</div>;
 };
 
 export default Post; 
