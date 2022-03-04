@@ -1,34 +1,60 @@
-import React from 'react';
 import {Link, useNavigate} from "react-router-dom";
 import {useSelector, useDispatch} from "react-redux";
 import {logout} from "../../features/auth/authSlice";
+import {useState} from 'react';
 import './Header.scss';
 
 const Header = () =>{
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const {user} = useSelector((state) => state.auth);
-    const onLogout = (event) =>{
+    const [text, setText] = useState("");
+    const handleChange = (event) =>{
+        setText(event.target.value);
+        if(event.key === "Enter"){
+            navigate('/search/' + text);
+        }
+    };
+        const onLogout = (event) =>{
         event.preventDefault();
         dispatch(logout());
         navigate("/login");
     };
     return(
         <nav>
-        <div className='header'>
-        {
-        user ? <>
-            <span><Link to="/profile">{user.user.name}</Link></span>
-        <span><Link to="/" onClick={onLogout}>  Logout</Link></span>
-        </>
-        :
-        <>
-        <span><Link to ="/login">Login</Link></span>
-        <span><Link to="/Register">Register</Link></span>
-        </>
-            }
+        <div className="header">
+          {user ? (
+            <>
+        
+        <input onKeyUp={handleChange} placeholder="search post" name="text" />
+              <span>
+                <Link to="/home">Home</Link>{" "}
+              </span>
+              <span>
+                <Link to="/" onClick={onLogout}>
+                  Logout
+                </Link>
+              </span>
+            </>
+          ) : (
+            <>
+              <span>
+                <Link to="/login">Login</Link>
+              </span>
+              <span>
+                <Link to="/register">Register</Link>
+              </span>
+            </>
+          )}
+          {user?.user.rol === "admin" ? (
+            <span>
+              <Link to="/admin">Admin</Link>
+            </span>
+          ) : (
+            ""
+          )}
         </div>
-        </nav>
+      </nav>
         
     );
 }
