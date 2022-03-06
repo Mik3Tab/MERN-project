@@ -31,7 +31,7 @@ const Login = () => {
     e.preventDefault();
     dispatch(login(formData));
     setTimeout(() => {
-      navigate("/profile");
+      navigate("/home");
     }, 1000);
   };
 

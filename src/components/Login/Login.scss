@@ -3,3 +3,10 @@
     margin: 0;
     box-sizing: 0;
 }
+form{
+    height: 30vh;
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    width: 80%; 
+}
