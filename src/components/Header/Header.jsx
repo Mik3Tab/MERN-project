@@ -26,7 +26,7 @@ const Header = () =>{
           {user ? (
             <>
         
-        <input onKeyUp={handleChange} placeholder="search post" name="text" />
+        <input onKeyUp={handleChange} placeholder="search user" name="text" className="search" />
               <span>
                 <Link to="/home">Home</Link>{" "}
               </span>

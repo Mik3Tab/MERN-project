@@ -5,7 +5,7 @@ import "./Home.scss";
 const Home = () => {
   return (
     <div className="container">
-      <div className="column">
+      <div className="column profile">
         <Profile/>
       </div>
       <div className="column posts">
@@ -13,7 +13,7 @@ const Home = () => {
       <hr />
       <Posts/>
       </div>      
-      <div className="column">
+      <div className="column following">
         <h2>Who to follow</h2>
         <hr />
       </div>

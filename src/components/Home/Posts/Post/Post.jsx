@@ -11,7 +11,6 @@ const Post = () => {
     await dispatch(getAll());
     await dispatch(reset());
   }, []);
-
   if(isLoading){
     return(
       <h1>
@@ -19,12 +18,11 @@ const Post = () => {
       </h1>
     )
   }
-
   const post = posts.map((post) => {
     return (
       <div className="post" key={post._id}>
         <Link to={"/post/" + post._id}>
-          <h1>{post.title}</h1>
+          <h2>{post.title}</h2>
           <h3>{post.createdAt}</h3>
         </Link>
         </div>
@@ -32,5 +30,4 @@ const Post = () => {
   });
   return <div className="container_post">{post}</div>;
 };
-
-export default Post; 
+export default Post;
