@@ -30,7 +30,7 @@ const Post = () => {
         </div>
     );
   });
-  return <div className="container">{post}</div>;
+  return <div className="container_post">{post}</div>;
 };
 
 export default Post; 
