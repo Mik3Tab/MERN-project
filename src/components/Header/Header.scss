@@ -1,10 +1,12 @@
 @import '../../colors.scss';
+
 .header{
     display: flex;
-    justify-content:space-evenly;
+    justify-content:space-around;
     background-color: $primaryColor;
     color: $primaryLetterColor;
     font-size: 1.5em;
+    text-shadow: 2px 2px 2px black;
     min-height: 2em;
 }
 span{
@@ -15,7 +17,14 @@ input{
     display: flex;
     justify-items: center;
 }
-
+.link{
+    color: azure;
+}
+.link:hover{
+    color: #BBE1FA;
+}
 .search{
+    display: flex;
     color: black;
+    width: 20%;
 }

@@ -1,4 +1,79 @@
-.container_post{
-    display: flex;
-    flex-direction: column;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import "../../../../colors.scss";
+
+.card {
+    width: 100%;
+    border-radius: 20px;
+    margin-top:20px;
+    background: $primaryColor;
+    overflow: hidden;
+    padding: 14px;
+    position: relative;
+    font-size: 10px;
+    text-align: start;
+    box-shadow: 2px 2px 4px 1px rgb(27, 27, 27);
+    header {
+        &.user {
+            display: flex;
+            gap: 12px;
+
+            img {
+                height: 40px;
+                width: 40px;
+                border-radius: 50%;
+                object-fit: cover;
+            }
+        }
+        .user-info {
+            &-name {
+                font-weight: 500;
+                color: azure;
+            }
+            &-time {
+                font-size: 12px;
+                color: rgba(255, 255, 255, 0.588);
+            }
+        }
+    }
+    main p {
+        font-size: 14px;
+        color: #fff;
+
+    }
+
+    section {
+        margin-top: 20px;
+        display: flex;
+        align-items: center;
+
+        .users-avatars {
+            margin-right: 21px;
+            display: flex;
+            align-items: center;
+
+            img {
+                height: 32px;
+                width: 32px;
+                object-fit: cover;
+                border-radius: 50%;
+                border: 3px solid #191A1D;
+                margin-right: -21px;
+            }
+        }
+
+        p {
+            color: azure;
+            font-size: 12px;
+            margin-left: 10px;
+        }
+
+        p.comment {
+            display: flex;
+            flex-direction: row;
+        }
+        p.dateTime{
+            display: flex;
+            margin-left: 200%;
+        }
+    }
 }

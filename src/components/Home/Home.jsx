@@ -5,17 +5,17 @@ import "./Home.scss";
 const Home = () => {
   return (
     <div className="container">
+      <div className="profile-container"></div>
       <div className="column profile">
         <Profile/>
-      </div>
+        </div>
       <div className="column posts">
-      <h2>Home</h2>
+      <h2 className="title2">Home</h2>
       <hr />
       <Posts/>
       </div>      
       <div className="column following">
-        <h2>Who to follow</h2>
-        <hr />
+        <h2 className="title3">Who to follow</h2>
       </div>
     </div>
   );

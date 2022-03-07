@@ -25,16 +25,15 @@ const Header = () =>{
         <div className="header">
           {user ? (
             <>
-        
-        <input onKeyUp={handleChange} placeholder="search user" name="text" className="search" />
               <span>
-                <Link to="/home">Home</Link>{" "}
+              <Link to="/profile" className="link">{user.user.name}</Link>
               </span>
+        <input onKeyUp={handleChange} placeholder="Search user" name="text" className="search" />
               <span>
-                <Link to="/profile">{user.user.name}</Link>
               </span>
+              <Link to="/home" className="link">Home</Link>{" "}
               <span>
-                <Link to="/" onClick={onLogout}>
+                <Link to="/" onClick={onLogout} className="link">
                   Logout
                 </Link>
               </span>

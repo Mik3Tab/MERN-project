@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { login, reset } from "../../features/auth/authSlice";
 import { notification } from "antd";
+import { FontAwesomeIcon} from '@fortawesome/fontawesome-svg-core'; 
 import "antd/dist/antd.css";
 import './Login.scss';
 
@@ -34,7 +35,6 @@ const Login = () => {
       navigate("/home");
     }, 1000);
   };
-
     return(
     <div className="mainLogin">
       <h1>Login</h1>
@@ -46,5 +46,4 @@ const Login = () => {
     </div>
     )
 }
-
 export default Login;

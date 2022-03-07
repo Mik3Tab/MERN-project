@@ -1,10 +1,28 @@
+*{
+    margin: 0;
+    padding: 0;
+}
 .profile{
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 31%;
+    position: fixed;
+    text-align: center;
+
 }
-.userInfo{
-    align-items: center;
-    border: 1px solid black;
-    background-color: lightgrey;
-    box-shadow: 2px 2px 2px;
-}
+// .userInfo{
+//     align-items: center;
+//     border: 1px solid black;
+//     background-color: lightgrey;
+//     box-shadow: 2px 2px 2px;
+// }
+
+// .card {
+// 	border-radius:20px !important;
+// }
+
+// .small-txt {font-size:13px}
+
+// .grey{color:grey}
