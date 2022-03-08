@@ -4,13 +4,16 @@ const Profile = () =>{
     const {user} = useSelector((state)=> state.auth);
     console.log('user', user)
     return (
-        <div className="profile">
+        <div>
             <h2>Your profile</h2>
             <hr />
-                <div className="userInfo">
+            <h2>User info</h2>
+            <div className="card-profile">
+                <div className="user-info">
                     <p>{user.user.name}</p>
                     <p>{user.user.email}</p>
                 </div>
+            </div>
         </div>
     );
 };

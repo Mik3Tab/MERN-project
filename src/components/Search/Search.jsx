@@ -5,12 +5,11 @@ import {useParams} from "react-router-dom";
 import {getPostByName} from "../../features/posts/postsSlice";
 import Post from "../Home/Posts/Post/Post";
 const Search = () =>{
-    const {postName} = useParams();
+    const {title} = useParams();
     const dispatch = useDispatch();
-
     useEffect(()=>{
-        dispatch(getPostByName(postName));
-    },[postName]);
+        dispatch(getPostByName(title));
+    },[title]);
     return <div><Post/></div>
 }
 
