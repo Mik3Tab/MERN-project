@@ -1,7 +1,7 @@
 
 import React, { useEffect, useState } from "react";
 import {useDispatch, useSelector} from 'react-redux';
-import {createPost} from '../../../../features/posts/postsSlice';
+import {createPost, getAll, reset} from '../../../../features/posts/postsSlice';
 import './AddPost.scss';
 
 const AddPost = () => {
@@ -15,9 +15,11 @@ const dispatch = useDispatch();
     }))
   }
 
-  const onSubmit = (event) => {
+  const onSubmit = async (event) => {
     event.preventDefault()
-    dispatch(createPost(formData))
+    await dispatch(createPost(formData))
+    await dispatch(getAll())
+    await dispatch(reset())
 }
 
   return (

@@ -9,8 +9,8 @@ import PostDetail from "./components/Home/Posts/PostDetail/PostDetail";
 import Search from "./components/Search/Search";
 import AddPost from "./components/Home/Posts/AddPost/AddPost";
 import Footer from "./components/Footer/Footer";
+import updatePost from './components/Home/Posts/EditPost/EditPost';
 import './App.scss';
-
 function App() {
   return (
     <div className="App">
@@ -24,11 +24,12 @@ function App() {
           <Route path="/profile" element={<Profile/>} />
           <Route path="/post/:_id" element={<PostDetail/>} />
           <Route element={<Footer/>}/>
-          <Route path="/search/:postName" element={<Search/>}></Route>
+          <Route path="/post/editPost/_id" element={<updatePost/>}/>
+          <Route path="/search/:title" element={<Search/>}></Route>
         </Routes>
+        <Footer/>
       </BrowserRouter>
     </div>
   );
 }
-
 export default App;

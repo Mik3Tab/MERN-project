@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { login, reset } from "../../features/auth/authSlice";
 import { notification } from "antd";
-import { FontAwesomeIcon} from '@fortawesome/fontawesome-svg-core'; 
 import "antd/dist/antd.css";
 import './Login.scss';
 

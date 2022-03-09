@@ -3,12 +3,12 @@
 
 .card {
     width: 100%;
+    max-width: 500px;
     border-radius: 20px;
     margin-top:20px;
     background: $primaryColor;
     overflow: hidden;
     padding: 14px;
-    position: relative;
     font-size: 10px;
     text-align: start;
     box-shadow: 2px 2px 4px 1px rgb(27, 27, 27);

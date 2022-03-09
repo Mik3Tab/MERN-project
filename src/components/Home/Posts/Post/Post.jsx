@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getAll, reset, like,dislike,  deletePost } from "../../../../features/posts/postsSlice";
+import { like,dislike,  deletePost } from "../../../../features/posts/postsSlice";
 import {HeartFilled, HeartOutlined } from '@ant-design/icons';
-import { Spin } from "antd";
 import { Link } from "react-router-dom";
+import { Spin } from "antd";
+
 import './Post.scss';
 const Post = () => {
   const { posts, isLoading } = useSelector((state) => state.posts);
@@ -17,10 +18,6 @@ const Post = () => {
   }
 
   const dispatch  = useDispatch();
-  useEffect(async()=>{
-    await dispatch(getAll());
-    await dispatch(reset());
-  }, []);
   if(isLoading){
     return(
       <h1>
@@ -28,7 +25,6 @@ const Post = () => {
       </h1>
     )
   }
-
   const post = posts.map((post) => {
     const isLiked = post.likes?.includes(user?.user._id);
     return (
@@ -55,8 +51,15 @@ const Post = () => {
             <HeartOutlined onClick={isLiked ? () => dispatch(dislike(post._id)) : () => dispatch(like(post._id))} />
             }
             <p className="comment">10 comment</p>
+         
+            {user.user._id===post.userId._id
+            ?
+            <>
             <button onClick={() => dispatch(deletePost(post._id))}>Delete</button>
-            <button onClick={() => dispatch(deletePost(post._id))}>Edit</button>
+            </>
+            :
+            ''
+          },
         </section>
     </div>
       );

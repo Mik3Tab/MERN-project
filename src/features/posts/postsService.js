@@ -24,7 +24,7 @@ const createPost = async (post)=>{
   return res.data;
 }
 
-const deletePost = async( post)=>{
+const deletePost = async(post)=>{
   const user = JSON.parse(localStorage.getItem("user"));
   const res = await axios.delete(API_URL + "/posts/delete/" + post, {
     headers: {
@@ -35,7 +35,7 @@ const deletePost = async( post)=>{
 }
 
 const getPostByName = async(title)=>{
-  const res = await axios.get(API_URL + "/posts/id/" + title);
+  const res = await axios.get(API_URL + "/posts/findByTitle/" + title);
   return res.data;
 }
 
@@ -46,6 +46,19 @@ const insertComment = async(comment)=>{
       authorization: user?.token,
     },
   })
+  return res.data;
+}
+
+const updataePost = async (formData)=>{
+  const user = JSON.parse(localStorage.getItem("user"));
+  const res = await axios.put(API_URL + /posts/ + formData._id, formData,{
+    headers: {
+      authorization: user?.token,
+    }
+  })
+  if(res.data){
+    getById()
+  }
   return res.data;
 }
 
