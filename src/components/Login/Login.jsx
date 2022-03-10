@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { login, reset } from "../../features/auth/authSlice";
 import { notification } from "antd";
+import { Link } from "react-router-dom";
 import "antd/dist/antd.css";
 import './Login.scss';
 
@@ -41,6 +42,8 @@ const Login = () => {
             <input type="email" name="email" placeholder="email" value={email} onChange={onChange}/>
             <input type="password" name="password" placeholder="password" value={password} onChange={onChange}/>
             <button type="submit">Login</button>
+            <button><Link to={"/register"}>Register</Link></button>
+
         </form>
     </div>
     )

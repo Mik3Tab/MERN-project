@@ -2,9 +2,13 @@
 
 .profile-container{
     max-width: 600px;
-    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align:center;
     background-color: $pink;
+    margin-bottom: 248px;
 }
 .card-profile {
     width: 100%;

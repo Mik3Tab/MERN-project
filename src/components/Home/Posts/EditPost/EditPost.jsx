@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import {useDispatch } from "react-redux";
 import { navigate, useNavigate, useParams } from "react-router-dom";
 import { getById, updatePost } from "../../../../features/posts/postsSlice"
+import "./EditPost.scss"
 const EditPost = () => {
     const {_id} = useParams();
     const dispatch = useDispatch();
@@ -30,8 +31,7 @@ const EditPost = () => {
     },[post.title, post.description]);
   return (
     <div>
-        hola
-        <form onSubmit={onSubmit}>
+        <form onSubmit={onSubmit} className="editpost-container">
             <h2>Edit post</h2>
             <input type="text" name="title" id="" value={title} onChange={onChange} />
             <textarea type="text" value={description} onChange={onChange} name="description"></textarea>

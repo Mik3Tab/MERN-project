@@ -1,4 +1,8 @@
+@import './colors.scss';
 *{
   box-sizing: 0;
   margin: 0;
+}
+.App{
+  background-color: $pink;
 }

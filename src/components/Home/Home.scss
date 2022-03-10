@@ -23,3 +23,15 @@ hr{
     border: 1px solid black;
     width: 100%;
 }
+
+@media only screen and (max-width: 530px) {
+.profile{
+    display:none;
+}
+.following{
+    display:none;
+}
+.posts{
+    width: 100%;
+}
+}

@@ -4,8 +4,7 @@ h1{
     justify-content: center;
 }
 form{
-    display: flex;
-    justify-content: center;
+    height: 300px;
     input{
         all:unset;
         border: 1px solid black;
@@ -13,4 +12,13 @@ form{
         box-shadow: 1px 1px 1px grey;
         margin: 5px;
     }   
+}
+.register{
+    margin-top: 100px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 171px;
+    margin-left: 515px;
 }

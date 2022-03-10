@@ -8,12 +8,13 @@ const Search = () =>{
     const {title} = useParams();
     const dispatch = useDispatch();
     useEffect(()=>{
-        console.log(title)
         dispatch(getPostByName(title));
     },[title]);
-    return <div clasName="search-container">
-        <h2>Resultados de la búsqueda:</h2>
+    return <div>
+        <h2>Resultados de la búsqueda</h2>
+        <div className="search-container">
         <Post/>
+            </div>
         </div>
 }
 export default Search;

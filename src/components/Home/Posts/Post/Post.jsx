@@ -50,7 +50,6 @@ const Post = () => {
             :
             <HeartOutlined onClick={isLiked ? () => dispatch(dislike(post._id)) : () => dispatch(like(post._id))} />
             }
-            <p className="comment">10 comment</p>
             {user.user._id===post.userId?._id
             ?
             <>

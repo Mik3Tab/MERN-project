@@ -4,19 +4,25 @@
     margin: 0;
     box-sizing: 0;
 }
+body{
+    height: 600px;
+}
 .mainLogin{
-    width: 60%;
+    width: 40%;
     display: flex;
     justify-content: center;
     flex-direction: column;
-    margin-left: 300px;
+    margin-left: 475px;
+    margin-top: 100px;
+    margin-bottom: 221px;
 }
 form{
+    padding-top: 30px;
     display: flex;
     justify-content: center;
     width: 500px;
     display: flex;
     flex-direction:column;
     justify-content: center;
-    width: 80%; 
+    width: 60%; 
 }

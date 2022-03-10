@@ -20,6 +20,7 @@ const Header = () =>{
         dispatch(logout());
         navigate("/login");
     };
+
     return(
         <nav>
         <div className="header">

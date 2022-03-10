@@ -1,6 +1,7 @@
 @import "../../colors.scss";
 .search-container{
     display: flex;
-    justify-content:center;
-    margin-left: 400px;
+    flex-direction: column;
+    margin-bottom: 400px;
+    margin-left: 510px;
 }

@@ -1,17 +1,8 @@
 @import '../../colors.scss';
-    header {
-        height: 5%;
-        display: flex;
-        align-items: center;
-        
-        h4 {
-            text-transform: uppercase;
-            color: #333333;
-        }
-    }
 
     .NotFound-container {
         width: 100%;    
+        margin-bottom: 35px;
         display: grid;
         grid-template-columns: 1fr 1fr;
         column-gap: 50px;
@@ -56,10 +47,6 @@
         }
     }
 
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
         
 @media only screen and (max-width: 375px) {
     body {
