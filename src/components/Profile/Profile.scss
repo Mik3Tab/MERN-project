@@ -1,5 +1,11 @@
 @import "../../colors.scss";
 
+.profile-container{
+    max-width: 600px;
+    
+    text-align:center;
+    background-color: $pink;
+}
 .card-profile {
     width: 100%;
     border-radius: 20px;

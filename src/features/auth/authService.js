@@ -15,6 +15,16 @@ const login = async(userData) =>{
     return res.data
 }
 
+const myProfile = async()=>{
+    const user = JSON.parse(localStorage.getItem('user'));
+    const res = await axios.get(API_URL+'/users/profile',{
+        headers:{
+            authorization: user?.token
+        }
+    })
+    return res.data;
+}
+
 const logout = async(userData)=>{
     const user = JSON.parse(localStorage.getItem("user"));
     const res = axios.put(API_URL + "/users/logout",{}, {
@@ -31,7 +41,8 @@ const logout = async(userData)=>{
 const authService = {
     register,
     login,
-    logout
+    logout,
+    myProfile
 };
 
 export default authService;

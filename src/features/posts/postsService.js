@@ -7,13 +7,13 @@ const getAll = async () => {
 };
 
 const getById = async (_id) =>{
-    const res = await axios.get(API_URL + "/posts" + _id);
+    const res = await axios.get(API_URL + "/posts/findById/" + _id);
     return res.data;
 }
 
 const createPost = async (post)=>{
   const user = JSON.parse(localStorage.getItem('user'));
-  const res = await axios.post(API_URL + "/posts/create", post, {
+  const res = await axios.post(API_URL + "/posts/create/", post, {
     headers:{
       authorization: user?.token,
     }
@@ -39,9 +39,9 @@ const getPostByName = async(title)=>{
   return res.data;
 }
 
-const insertComment = async(comment)=>{
+const insertComment = async(formData)=>{
   const user = JSON.parse(localStorage.getItem("user"));
-  const res = await axios.put(API_URL + "/posts/comments/" + comment._id, comment, {
+  const res = await axios.put(API_URL + "/posts/comment/" + formData._id, formData, {
     headers: {
       authorization: user?.token,
     },
@@ -49,7 +49,7 @@ const insertComment = async(comment)=>{
   return res.data;
 }
 
-const updataePost = async (formData)=>{
+const updatePost = async (formData)=>{
   const user = JSON.parse(localStorage.getItem("user"));
   const res = await axios.put(API_URL + /posts/ + formData._id, formData,{
     headers: {
@@ -89,6 +89,7 @@ const postsService = {
   dislike,
   createPost,
   insertComment,
+  updatePost,
   deletePost,
   getPostByName
 };

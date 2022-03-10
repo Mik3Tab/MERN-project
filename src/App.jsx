@@ -9,7 +9,8 @@ import PostDetail from "./components/Home/Posts/PostDetail/PostDetail";
 import Search from "./components/Search/Search";
 import AddPost from "./components/Home/Posts/AddPost/AddPost";
 import Footer from "./components/Footer/Footer";
-import updatePost from './components/Home/Posts/EditPost/EditPost';
+import EditPost from './components/Home/Posts/EditPost/EditPost';
+import NotFound from './components/NotFound/NotFound';
 import './App.scss';
 function App() {
   return (
@@ -23,12 +24,12 @@ function App() {
           <Route path="/register" element={<Register/>} />
           <Route path="/profile" element={<Profile/>} />
           <Route path="/post/:_id" element={<PostDetail/>} />
-          <Route element={<Footer/>}/>
-          <Route path="/post/editPost/_id" element={<updatePost/>}/>
+          <Route path="/post/editPost/:_id" element={<EditPost/>}/>
           <Route path="/search/:title" element={<Search/>}></Route>
+          <Route path="*" element={<NotFound/>}/>
         </Routes>
-        <Footer/>
       </BrowserRouter>
+        <Footer/>
     </div>
   );
 }

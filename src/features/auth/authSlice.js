@@ -4,6 +4,7 @@ import authService from './authService';
 const user = JSON.parse(localStorage.getItem('user'))
 const initialState = {
     user: user ? user : null,
+    userInfoProfile: {},
     isError: false,
     isSuccess: false,
     message: "",
@@ -26,6 +27,14 @@ export const login = createAsyncThunk('auth/login', async (user, thunkAPI) => {
         return thunkAPI.rejectWithValue(message);
     }
 });
+
+export const myProfile = createAsyncThunk('auth/profile', async () =>{
+    try{
+        return await authService.myProfile();
+    }catch(error){
+        console.error(error);
+    }
+})
 
 export const logout = createAsyncThunk('auth/logout', async (user) => {
     try {
@@ -58,6 +67,9 @@ export const authSlice = createSlice({
             })
             .addCase(logout.fulfilled, (state) => {
                 state.user = null;
+            })
+            .addCase(myProfile.fulfilled, (state,action)=>{
+                state.userInfoProfile = action.payload;
             })
             .addCase(register.fulfilled, (state, action) => {
                 state.isSuccess = true;

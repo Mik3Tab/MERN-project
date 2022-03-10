@@ -4,8 +4,16 @@
     margin: 0;
     box-sizing: 0;
 }
+.mainLogin{
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: 300px;
+}
 form{
-    height: 30vh;
+    display: flex;
+    justify-content: center;
     width: 500px;
     display: flex;
     flex-direction:column;

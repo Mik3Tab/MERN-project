@@ -3,6 +3,7 @@ import postsService from "./postsService";
 
 const initialState = {
   posts: [],
+  post: {},
   isLoading: false,
   isError: false,
   isSucces: false,
@@ -17,9 +18,9 @@ export const getAll = createAsyncThunk("posts/getAll", async () => {
   }
 });
 
-export const getById = createAsyncThunk("posts/getById", async () => {
+export const getById = createAsyncThunk("posts/getById", async (_id) => {
   try {
-    return await postsService.getById();
+    return await postsService.getById(_id);
   } catch (error) {
     console.error(error);
   }
@@ -37,6 +38,14 @@ export const createPost = createAsyncThunk("posts/createPost", async (post) => {
 export const updatePost = createAsyncThunk("posts/updatePost", async(_id)=>{
   try{
     return await postsService.updatePost(_id);
+  }catch(error){
+    console.error(error);
+  }
+})
+
+export const insertComment = createAsyncThunk("insertComment", async(formData)=>{
+  try{
+    return await postsService.insertComment(formData);
   }catch(error){
     console.error(error);
   }
@@ -97,6 +106,15 @@ export const postsSlice = createSlice({
         state.posts = state.posts.filter(
           (post) => post._id !== action.payload._id.toString()
         );
+      })
+      .addCase(insertComment.fulfilled, (state,action)=>{
+        state.post = action.payload;
+      })
+      .addCase(getById.fulfilled, (state,action)=>{
+        state.post = action.payload;
+      })
+      .addCase(updatePost.fulfilled, (state,action)=>{
+        state.posts = state.posts.filter((post) => post._id !== action.payload.post._id.toString());
       })
       .addCase(createPost.fulfilled, (state, action) => {
         state.posts = [action.payload,...state.posts]
