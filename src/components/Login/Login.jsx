@@ -42,7 +42,6 @@ const Login = () => {
             <input type="email" name="email" placeholder="email" value={email} onChange={onChange}/>
             <input type="password" name="password" placeholder="password" value={password} onChange={onChange}/>
             <button type="submit">Login</button>
-            <button><Link to={"/register"}>Register</Link></button>
 
         </form>
     </div>

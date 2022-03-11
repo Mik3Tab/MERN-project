@@ -1,0 +1,43 @@
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  background-color: #6A097D;
+  color: azure;
+  font-size: 1.5em;
+  text-shadow: 2px 2px 2px black;
+  min-height: 2em;
+}
+
+span {
+  font-size: 22px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-items: center;
+}
+
+.link {
+  color: azure;
+}
+
+.link:hover {
+  color: #BBE1FA;
+}
+
+.search {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: black;
+  width: 20%;
+}
+/*# sourceMappingURL=Header.css.map */

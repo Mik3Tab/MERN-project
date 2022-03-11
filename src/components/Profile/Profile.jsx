@@ -8,8 +8,9 @@ const Profile = () =>{
     const dispatch = useDispatch();
     useEffect(async()=>{
         await dispatch(myProfile());
-    },[])
+    },[userInfoProfile.name])
     return (
+
         <div className="profile-container">
             <h2>Your profile</h2>
             <hr />
@@ -18,6 +19,15 @@ const Profile = () =>{
         <p>{userInfoProfile.name}</p>
         <p>{userInfoProfile.email}</p>
                 </div>
+            <div className="card-comments">
+            <h2>Posts</h2>
+            {userInfoProfile.postId?.map(post=>
+                    <>
+                    <p>{post.title}</p>
+                    <p>{post.description}</p>
+                    </>
+                    )}    
+            </div>
             </div>
                 );
 };

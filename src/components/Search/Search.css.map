@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AACA,AAAA,iBAAiB,CAAA;EACb,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,MAAM;EACtB,aAAa,EAAE,KAAK;EACpB,WAAW,EAAE,KAAK;CACrB",
+    "sources": [
+        "Search.scss",
+        "../../colors.scss"
+    ],
+    "names": [],
+    "file": "Search.css"
+}

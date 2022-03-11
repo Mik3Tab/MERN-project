@@ -1,0 +1,121 @@
+.profile-container {
+  max-width: 600px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  background-color: #fad9fa;
+  margin-bottom: 248px;
+}
+
+.card-profile {
+  width: 100%;
+  border-radius: 20px;
+  height: 250px;
+  background: #6A097D;
+  color: azure;
+  overflow: hidden;
+  padding: 14px;
+  font-size: 14px;
+  text-align: center;
+  -webkit-box-shadow: 2px 2px 4px 1px #1b1b1b;
+          box-shadow: 2px 2px 4px 1px #1b1b1b;
+}
+
+.card-profile header.user {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 12px;
+}
+
+.card-profile header.user img {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.card-profile main p {
+  font-size: 14px;
+  color: #fff;
+}
+
+.card-profile section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.card-profile section .users-avatars {
+  margin-right: 21px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.card-profile section .users-avatars img {
+  height: 32px;
+  width: 32px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #191A1D;
+  margin-right: -21px;
+}
+
+.card-profile section p {
+  color: azure;
+  font-size: 12px;
+  margin-left: 10px;
+}
+
+.card-profile section p.comment {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.card-profile section p.dateTime {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: 200%;
+}
+
+h1 {
+  text-align: start;
+}
+
+.card-comments {
+  margin-top: 20px;
+  width: 100%;
+  border-radius: 20px;
+  background: #6A097D;
+  color: azure;
+  overflow: hidden;
+  padding: 14px;
+  font-size: 14px;
+  text-align: center;
+  -webkit-box-shadow: 2px 2px 4px 1px #1b1b1b;
+          box-shadow: 2px 2px 4px 1px #1b1b1b;
+}
+/*# sourceMappingURL=Profile.css.map */

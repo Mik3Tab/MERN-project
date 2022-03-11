@@ -17,7 +17,7 @@ const login = async(userData) =>{
 
 const myProfile = async()=>{
     const user = JSON.parse(localStorage.getItem('user'));
-    const res = await axios.get(API_URL+'/users/profile',{
+    const res = await axios.get(API_URL+'/users/getCurrentUser',{
         headers:{
             authorization: user?.token
         }

@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAIA,AAAA,mBAAmB,CAAA;EACf,UAAU,EAAE,MAAM;EAClB,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,MAAM;EACvB,KAAK,EAAE,GAAG;EACV,WAAW,EAAE,KAAK;EAClB,UAAU,EAAE,KAAK;EACjB,aAAa,EAAE,KAAK;CACvB",
+    "sources": [
+        "EditPost.scss",
+        "../../../../colors.scss"
+    ],
+    "names": [],
+    "file": "EditPost.css"
+}

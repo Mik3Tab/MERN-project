@@ -28,7 +28,7 @@ const PostDetail = () => {
 const singleComment = post.comments?.map((comment)=>{
   return (
   <div>
-    <p>Comment:</p>
+    <h2>Comment:</h2>
     <p key={comment._id}>{comment.comment}</p>
   </div>)
 })

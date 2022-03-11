@@ -1,0 +1,48 @@
+.container-createPost {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+h3 {
+  color: azure;
+}
+
+form {
+  width: 100%;
+  height: 250px;
+  color: #824c8d;
+  background-color: #6A097D;
+  border-radius: 15px;
+  -webkit-box-shadow: 2px 2px 4px 1px #1b1b1b;
+          box-shadow: 2px 2px 4px 1px #1b1b1b;
+}
+
+form textarea {
+  height: 100px;
+}
+
+button {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 30px;
+  background-color: #6A097D;
+  width: 30%;
+  text-align: center;
+  margin: auto;
+  color: azure;
+  border-radius: 25px;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: purple;
+  -webkit-animation: alternate 2ms;
+          animation: alternate 2ms;
+}
+/*# sourceMappingURL=AddPost.css.map */

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { like,dislike,  deletePost } from "../../../../features/posts/postsSlice";
+import { like,dislike,  deletePost, getAll, reset } from "../../../../features/posts/postsSlice";
 import {HeartFilled, HeartOutlined } from '@ant-design/icons';
 import { Link } from "react-router-dom";
 import { Spin } from "antd";
@@ -17,6 +17,16 @@ const Post = () => {
     }))
   }
   const dispatch  = useDispatch();
+  const onLike = async(_id)=>{
+    await dispatch(like(_id));
+    await dispatch(getAll());
+    await dispatch(reset());
+  }
+const onDislike=async(_id)=>{
+  await dispatch(dislike(_id));
+    await dispatch(getAll());
+    await dispatch(reset());
+}
   const post = posts.map((post) => {
     const isLiked = post.likes?.includes(user?.user._id);
     if(isLoading){
@@ -46,10 +56,11 @@ const Post = () => {
             <p className="like">Likes: {post.likes?.length}</p>
             {isLiked
             ?
-            <HeartFilled onClick={isLiked ? () => dispatch(dislike(post._id)) : () => dispatch(like(post._id))} />
+            <HeartFilled onClick={isLiked ? () => onDislike(post._id) : () => onLike(post._id)} />
             :
-            <HeartOutlined onClick={isLiked ? () => dispatch(dislike(post._id)) : () => dispatch(like(post._id))} />
+            <HeartOutlined onClick={isLiked ? () => onDislike(post._id) : () => onLike(post._id)} />
             }
+            
             {user.user._id===post.userId?._id
             ?
             <>
